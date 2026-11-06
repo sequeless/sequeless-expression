@@ -35,8 +35,7 @@ import org.sequeless.kernel.values.Value;
  * <p><b>What this contract deliberately does not check.</b> {@link #evaluatesIntegerLiteral()}
  * asserts only that the result is an {@link IntegerValue} carrying the expected numeric value, not
  * which JEXL-internal numeric type produced it — the JEXL-result-to-{@link Value} conversion is an
- * adapter concern this contract must stay agnostic to, exactly as {@link
- * org.sequeless.testkit.authz.AuthorizationContract} stays agnostic to a policy's actual
+ * adapter concern this contract must stay agnostic to, exactly as the prototype's AuthorizationContract stays agnostic to a policy's actual
  * allow/deny outcome. Sandbox rejection is asserted only by exception type ({@link
  * ExpressionException}), never by message text, since message wording is also an adapter choice.
  */
