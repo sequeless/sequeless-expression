@@ -42,7 +42,7 @@ import org.sequeless.kernel.values.Value;
 public abstract class ExpressionContract {
 
     /** Subclasses supply the port under test through {@link #port()}. */
-    public ExpressionContract() {}
+    protected ExpressionContract() {}
 
     /**
      * Supplies the port under test.
