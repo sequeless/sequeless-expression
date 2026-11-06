@@ -2,31 +2,31 @@
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
   "release-type": "maven",
   "include-component-in-tag": true,
-  "plugins": [
-    {
-      "type": "maven-workspace"
-    }
-  ],
+  "plugins": [{ "type": "maven-workspace" }],
   "packages": {
     "expression-api": {
       "component": "expression-api",
       "initial-version": "0.1.0",
-      "release-as": "0.1.1"
+      "versioning": "always-bump-patch",
+      "skip-snapshot": true
     },
     "expression-testkit": {
       "component": "expression-testkit",
       "initial-version": "0.1.0",
-      "release-as": "0.1.1"
+      "versioning": "always-bump-patch",
+      "skip-snapshot": true
     },
     "expression-jexl-adapter": {
       "component": "expression-jexl-adapter",
       "initial-version": "0.1.0",
-      "release-as": "0.1.1"
+      "versioning": "always-bump-patch",
+      "skip-snapshot": true
     },
     "expression-spring-boot-autoconfig": {
       "component": "expression-spring-boot-autoconfig",
       "initial-version": "0.1.0",
-      "release-as": "0.1.1"
+      "versioning": "always-bump-patch",
+      "skip-snapshot": true
     }
   }
 }
