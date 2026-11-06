@@ -102,6 +102,7 @@ public final class JexlExpressionPort implements ExpressionPort {
     private final JexlEngine engine;
     private final JxltEngine jxlt;
 
+    /** Builds the sandboxed JEXL engine and the JXLT renderer with the adapter's permission set. */
     public JexlExpressionPort() {
         this.engine = new JexlBuilder()
                 .permissions(PERMISSIONS)
