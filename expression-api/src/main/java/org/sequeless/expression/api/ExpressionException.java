@@ -21,6 +21,8 @@ package org.sequeless.expression.api;
 public final class ExpressionException extends RuntimeException {
 
     /**
+     * Creates an exception with a message describing why the expression failed.
+     *
      * @param message a message describing why the expression could not produce a result; may be
      *     {@code null}
      */
@@ -29,6 +31,8 @@ public final class ExpressionException extends RuntimeException {
     }
 
     /**
+     * Creates an exception that wraps the failure that made the expression fail.
+     *
      * @param message a message describing why the expression could not produce a result; may be
      *     {@code null}
      * @param cause the underlying failure this exception wraps, typically thrown by the JEXL
