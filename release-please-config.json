@@ -24,15 +24,13 @@
       "component": "expression-jexl-adapter",
       "initial-version": "0.1.0",
       "versioning": "always-bump-patch",
-      "skip-snapshot": true,
-      "release-as": "0.1.1"
+      "skip-snapshot": true
     },
     "expression-spring-boot-autoconfig": {
       "component": "expression-spring-boot-autoconfig",
       "initial-version": "0.1.0",
       "versioning": "always-bump-patch",
-      "skip-snapshot": true,
-      "release-as": "0.1.1"
+      "skip-snapshot": true
     }
   }
 }
