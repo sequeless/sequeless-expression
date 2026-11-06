@@ -4,6 +4,9 @@
   "include-component-in-tag": true,
   "plugins": [{ "type": "maven-workspace" }],
   "packages": {
-    "template-core": { "component": "template-core", "initial-version": "0.1.0" }
+    "expression-api": { "component": "expression-api", "initial-version": "0.1.0" },
+    "expression-testkit": { "component": "expression-testkit", "initial-version": "0.1.0" },
+    "expression-jexl-adapter": { "component": "expression-jexl-adapter", "initial-version": "0.1.0" },
+    "expression-spring-boot-autoconfig": { "component": "expression-spring-boot-autoconfig", "initial-version": "0.1.0" }
   }
 }
