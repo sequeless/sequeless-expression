@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  build:
+    uses: sequeless/sequeless-build/.github/workflows/maven-ci.yml@workflows-v0.1.2
+    secrets: inherit
