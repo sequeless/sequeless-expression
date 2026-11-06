@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Bean;
 @ConditionalOnProperty(name = "sequeless.expression.adapter", havingValue = "jexl")
 public class JexlExpressionAutoConfiguration {
 
+    /** Registers the JEXL-backed {@link ExpressionPort} bean. */
     @Bean
     public ExpressionPort expressionPort() {
         return new JexlExpressionPort();
