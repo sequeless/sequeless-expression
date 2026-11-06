@@ -1,11 +1,19 @@
 # Provenance
 
-- Source repos: sequeless/sequeless-filter, sequeless/sequeless-ontology, sequeless/sequeless-prototype
-- Source SHAs: filter@b5f69021807434981b7809cda78bb545801cba54, ontology@ace531320c135b40ece72336382078aacc882ba5, prototype@f1451a77dea33bf6d8c207fa2deced54bc8d7b21
-- Source paths:
-  - filter: Makefile, mvnw, mvnw.cmd, .mvn/wrapper/maven-wrapper.properties, commitlint.config.mjs, .devcontainer/devcontainer.json, .editorconfig, .gitattributes, LICENSE, .gitignore, .github/pull_request_template.md, .github/ISSUE_TEMPLATE/*, scripts/new-adr.sh, docs/adr/_template.md, docs/adr/0000-record-architecture-decisions.md, CONTRIBUTING.md
-  - ontology: CODEOWNERS, sonar-project.properties, .gitignore (AI-agent lines), facet-core BoundaryRulesTest (the four rules)
-  - prototype: CLAUDE.md, docs/agents/issue-tracker.md, docs/agents/domain.md, docs/agents/design-preferences.md
-- The move: copied and adapted into a GitHub template repo. Sources unchanged.
-- Date: 2026-10-27
-- Decisions: sequeless-prototype#17, #23 (extraction plan), spec 2 = #30
+- Created from: sequeless/sequeless-template at commit 916aa01 (Initial commit). The template's init script was not run. Its template-only files (`template-core/`, `scripts/init-repo.sh`, `docs/specs/stage-0-sequeless-template.md`, `.github/workflows/template-smoke.yml`) were removed by hand.
+- Source repo: sequeless/sequeless-prototype
+- Source SHA at the move: fda7c3e (main, after the javadoc prerequisite PR #82, which is squash-merged on top of `d53d3f1`, main after spec 7, PR #80).
+- Source paths, moved to `expression-api` (package `org.sequeless.expression.api`):
+  - `sequeless-spi/src/main/java/org/sequeless/spi/expression/{ExpressionPort,ExpressionContext,ExpressionException,package-info}.java`
+- Source paths, moved to `expression-jexl-adapter` (package `org.sequeless.expression.jexl`):
+  - `sequeless-adapter-expression-jexl/src/main/java/org/sequeless/adapter/expression/jexl/{JexlExpressionPort,package-info}.java`
+  - test `sequeless-adapter-expression-jexl/src/test/java/org/sequeless/adapter/expression/jexl/JexlExpressionPortContractTest.java`
+- Source paths, moved to `expression-testkit` (package `org.sequeless.expression.testkit`):
+  - `sequeless-spi-testkit/src/main/java/org/sequeless/testkit/expression/{ExpressionContract,package-info}.java`
+- Source paths, moved to `expression-spring-boot-autoconfig` (package `org.sequeless.expression.autoconfigure`):
+  - `sequeless-adapter-expression-jexl/src/main/java/org/sequeless/adapter/expression/jexl/JexlExpressionAutoConfiguration.java`
+  - `sequeless-adapter-expression-jexl/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`
+  - test `sequeless-adapter-expression-jexl/src/test/java/org/sequeless/adapter/expression/jexl/JexlExpressionAutoConfigurationTest.java`
+- The move: packages renamed in place (`org.sequeless.spi.expression` to `org.sequeless.expression.api`, `org.sequeless.adapter.expression.jexl` to `org.sequeless.expression.jexl`, `org.sequeless.testkit.expression` to `org.sequeless.expression.testkit`, and the autoconfig class to `org.sequeless.expression.autoconfigure`). The autoconfig is split into its own module, per the owner's decision on the module layout (spec 8, section 5).
+- Not moved: nothing in the prototype's expression consumers. The prototype keeps its copies until spec 9 deletes them.
+- Date: 2026-11-06

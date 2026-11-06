@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Aggregator only. Never released or deployed (spec 2, §1 and §6).
-  Modules take their parent from sequeless-build-parent, not from this POM, so the
-  repository entry and the junit-bom import are repeated in template-core/pom.xml.
+  Aggregator only. Never released or deployed: each module is released on its own.
+  Modules take their parent from sequeless-build-parent, not from this POM.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -10,18 +9,21 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.sequeless</groupId>
-  <artifactId>sequeless-template</artifactId>
+  <artifactId>sequeless-expression</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>sequeless-template</name>
-  <description>Placeholder repo: copy this to start a new Sequeless repo.</description>
+  <name>sequeless-expression</name>
+  <description>Expression: sandboxed JEXL evaluation behind the ExpressionPort SPI.</description>
 
   <properties>
     <maven.deploy.skip>true</maven.deploy.skip>
   </properties>
 
   <modules>
-    <module>template-core</module>
+    <module>expression-api</module>
+    <module>expression-testkit</module>
+    <module>expression-jexl-adapter</module>
+    <module>expression-spring-boot-autoconfig</module>
   </modules>
 
   <repositories>
