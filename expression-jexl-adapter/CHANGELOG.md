@@ -1,5 +1,8 @@
 # Changelog
 
+* The following workspace dependencies were updated
+    * org.sequeless:expression-testkit bumped to 0.1.1
+
 ## 0.1.0 (2026-11-06)
 
 

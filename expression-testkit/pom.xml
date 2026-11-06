@@ -11,7 +11,7 @@
 
   <groupId>org.sequeless</groupId>
   <artifactId>expression-testkit</artifactId>
-  <version>0.1.1-SNAPSHOT</version>
+  <version>0.1.1</version>
   <name>expression-testkit</name>
   <description>The mechanical ExpressionPort contract (ExpressionContract). Adapter-agnostic: no JEXL, no Spring.</description>
 
