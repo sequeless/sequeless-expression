@@ -11,7 +11,7 @@
 
   <groupId>org.sequeless</groupId>
   <artifactId>expression-jexl-adapter</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.0</version>
   <name>expression-jexl-adapter</name>
   <description>The default ExpressionPort adapter: Commons JEXL 3 in a sandboxed, side-effect-free configuration (no reflection, no static method/class access).</description>
 
@@ -39,7 +39,7 @@
     <dependency>
       <groupId>org.sequeless</groupId>
       <artifactId>expression-api</artifactId>
-      <version>${project.version}</version>
+      <version>0.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.sequeless</groupId>
@@ -56,7 +56,7 @@
     <dependency>
       <groupId>org.sequeless</groupId>
       <artifactId>expression-testkit</artifactId>
-      <version>${project.version}</version>
+      <version>0.1.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
