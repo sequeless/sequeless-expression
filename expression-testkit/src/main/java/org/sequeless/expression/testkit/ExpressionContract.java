@@ -41,7 +41,12 @@ import org.sequeless.kernel.values.Value;
  */
 public abstract class ExpressionContract {
 
+    /** Subclasses supply the port under test through {@link #port()}. */
+    public ExpressionContract() {}
+
     /**
+     * Supplies the port under test.
+     *
      * @return the {@link ExpressionPort} implementation under test; invoked fresh for every {@code
      *     @Test} method, so implementors may return a new instance each time or a shared one,
      *     whichever suits the port under test
