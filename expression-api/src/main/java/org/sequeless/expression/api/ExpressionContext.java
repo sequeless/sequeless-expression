@@ -16,14 +16,8 @@ import org.sequeless.kernel.values.Value;
  * {@code "title"} — not its IRI. That is what lets a JEXL script write {@code self.owner}: JEXL
  * resolves a bean-style {@code .property} or {@code [key]} access on any {@code self} bound to a
  * {@link java.util.Map}, and it has no notion of an IRI-qualified property name. Shortening a
- * property's IRI down to this local name is the caller's job — a later core-interpreter task that
- * builds a fresh {@code ExpressionContext} immediately before each {@link ExpressionPort} call —
- * not this record's. This is deliberately a different, narrower representation than the
- * IRI-keyed {@code self} map described in the outbox {@code ActionRequest} payload format
- * (plan.md §3): that map is built once, frozen at transition-fire time, and carries enough
- * information to survive a Temporal activity retry without re-reading mutable object state: an
- * {@code ExpressionContext} carries no such durability concern and is rebuilt fresh, by short
- * name, right before every evaluation.
+ * property's IRI to this local name is the caller's job, not this record's. Callers build a fresh
+ * record, by short name, right before each evaluation; it is not a durable snapshot.
  *
  * @param selfProperties the evaluated object's own property values, keyed by property short name
  *     (not IRI); must not be {@code null}; no value in the map may be {@code null}; returned as an

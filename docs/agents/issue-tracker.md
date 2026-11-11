@@ -10,7 +10,7 @@ Use `gh issue create` to open a new issue from the CLI:
 gh issue create --title "..." --body "..."
 ```
 
-Or open a new issue in [the GitHub UI](https://github.com/sequeless/sequeless-template/issues/new).
+Or open a new issue in [the GitHub UI](https://github.com/sequeless/sequeless-expression/issues/new).
 
 ## Reading issues
 
