@@ -1,9 +1,27 @@
 # sequeless-expression
 
-Sandboxed expression evaluation behind the `ExpressionPort` SPI: the guards on state machine
-transitions, `sq:value`/`sq:expression` on SetProperty and CreateObject, and the `${expr}` templates
-on Webhook and Log. Expressions are JEXL-family, evaluated with no reflection and no static
-method or class access.
+This library evaluates expressions in a safe sandbox. Sequeless services use it to make
+decisions and to calculate values from data.
+
+An expression is a short text in the JEXL language, for example `self.owner == principal`.
+The library returns the result as a `Value`.
+
+## What the library does
+
+- It evaluates the guards on state machine transitions. A guard decides if a transition can occur.
+- It evaluates `sq:value` and `sq:expression` on the SetProperty and CreateObject steps.
+- It renders the `${expr}` templates on the Webhook and Log steps.
+
+## Safety
+
+The JEXL adapter does not permit reflection. It does not permit access to static methods or to
+classes. Thus, an expression cannot run Java code that you did not approve.
+
+## Design
+
+Callers use the `ExpressionPort` interface. An adapter supplies the implementation. The default
+adapter is `JexlExpressionPort`. You can write a different adapter. The testkit contract makes sure
+that each adapter operates correctly.
 
 ## Modules
 
