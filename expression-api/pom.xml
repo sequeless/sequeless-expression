@@ -12,7 +12,7 @@
 
   <groupId>org.sequeless</groupId>
   <artifactId>expression-api</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
   <name>expression-api</name>
   <description>The ExpressionPort SPI and its context and exception types. Depends on kernel-values only.</description>
 
