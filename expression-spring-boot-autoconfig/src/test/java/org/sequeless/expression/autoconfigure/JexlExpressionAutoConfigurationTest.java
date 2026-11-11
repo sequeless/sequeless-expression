@@ -10,8 +10,7 @@ import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 
 /**
  * Exercises {@link JexlExpressionAutoConfiguration} via a real Spring context ({@link
- * ApplicationContextRunner}), mirroring {@code sequeless-adapter-persistence-postgres}'s {@code
- * PostgresPersistenceAutoConfigurationTest}.
+ * ApplicationContextRunner}).
  */
 class JexlExpressionAutoConfigurationTest {
 

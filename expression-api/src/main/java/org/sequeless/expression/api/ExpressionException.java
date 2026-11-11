@@ -6,17 +6,13 @@ package org.sequeless.expression.api;
  * rejection (an attempt at reflection or a static method/class reference), or a JEXL-{@code null}
  * result.
  *
- * <p>This is deliberately unchecked, for the same reason the prototype's OntologyException and StaleObjectException are: a malformed or rejected expression is a
- * condition every intermediate signature up the call chain — the core interpreter, the automation
- * adapters dispatching an action — should not have to declare, and the REST boundary (or any other
- * inbound adapter) is expected to catch it once, at the edge, to produce a response naming the
- * transition or action whose expression failed.
+ * <p>This is deliberately unchecked: a malformed or rejected expression is a condition that
+ * intermediate signatures should not have to declare, and an inbound adapter is expected to catch
+ * it once, at the edge.
  *
- * <p>Unlike {@code OntologyException}, this exception carries no structured report — an
- * implementation wraps whatever underlying failure it caught (typically a JEXL library's own
- * exception type) as the {@linkplain #getCause() cause}, so a two-argument constructor is provided
- * for that purpose; {@code OntologyException} has no analogous need because its own {@code
- * OntologyReport} payload is always constructed directly, never wrapped from a caught exception.
+ * <p>This exception carries no structured report. An implementation wraps the underlying failure it
+ * caught, typically a JEXL library's exception, as the {@linkplain #getCause() cause}; the
+ * two-argument constructor exists for that purpose.
  */
 public final class ExpressionException extends RuntimeException {
 

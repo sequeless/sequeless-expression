@@ -6,16 +6,14 @@ import org.sequeless.kernel.values.Value;
  * The outbound port every expression authored in the ontology is evaluated through — {@code
  * sq:guard}, {@code sq:SetProperty}/{@code sq:CreateObject}'s {@code sq:value}/{@code
  * sq:expression}, and the {@code ${expr}} templates on {@code sq:Webhook} and {@code sq:Log}.
- * Exactly one implementation is wired into the running application at a time, selected by
- * configuration property (see the app's {@code PortRegistry}); the core interpreter and the
- * automation adapters never evaluate an expression themselves, and never choose between
- * implementations.
+ * An application normally wires one implementation, selected by configuration. If it wires more
+ * than one, the application, not the code that calls this port, decides which one is used.
  *
- * <p>This javadoc is the full behavioural contract every implementation must satisfy. It is not
- * advisory: {@code expression-testkit}'s {@code ExpressionContract} asserts every clause of it
- * mechanically against any port passed to it, and any adapter's own test suite is expected to
- * extend that contract. An implementation that violates a clause here is not a valid adapter,
- * regardless of what its own tests claim.
+ * <p>This javadoc is the behavioural contract every implementation must satisfy. {@code
+ * expression-testkit}'s {@code ExpressionContract} asserts part of it mechanically against any port
+ * passed to it; it does not assert every clause. Any adapter's own test suite should extend that
+ * contract. An implementation that violates a clause here is not a valid adapter, regardless of
+ * what its own tests claim.
  *
  * <ul>
  *   <li><b>Null handling.</b> Every argument to every method on this interface — {@code

@@ -18,8 +18,8 @@ import org.sequeless.kernel.values.Value;
 /**
  * The mechanical form of the behavioural contract documented on {@link ExpressionPort}'s
  * interface-level javadoc. Every {@link ExpressionPort} implementation — adapter or test double —
- * is expected to satisfy every clause of that javadoc, and this class exercises each clause once,
- * against whatever port {@link #port()} supplies.
+ * is expected to satisfy every clause of that javadoc; this class exercises some of them against
+ * whatever port {@link #port()} supplies.
  *
  * <p>To use this contract, extend it from a test class in your own module and implement {@link
  * #port()} to return the implementation under test:
@@ -35,9 +35,9 @@ import org.sequeless.kernel.values.Value;
  * <p><b>What this contract deliberately does not check.</b> {@link #evaluatesIntegerLiteral()}
  * asserts only that the result is an {@link IntegerValue} carrying the expected numeric value, not
  * which JEXL-internal numeric type produced it — the JEXL-result-to-{@link Value} conversion is an
- * adapter concern this contract must stay agnostic to, exactly as the prototype's AuthorizationContract stays agnostic to a policy's actual
- * allow/deny outcome. Sandbox rejection is asserted only by exception type ({@link
- * ExpressionException}), never by message text, since message wording is also an adapter choice.
+ * adapter concern this contract must stay agnostic to. Rejected expressions are asserted only by
+ * exception type ({@link ExpressionException}), never by message text, since message wording is also
+ * an adapter choice.
  */
 public abstract class ExpressionContract {
 

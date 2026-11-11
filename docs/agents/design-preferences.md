@@ -10,14 +10,19 @@ Design decisions in this project should prioritise:
 
 ## Architectural pattern: hexagonal (ports and adapters)
 
-Each module splits into three layers, enforced by `BoundaryRulesTest`:
+Each module has a single root package (for example `org.sequeless.expression.api`). Each module's
+`BoundaryRulesTest` (ArchUnit, main code only) limits which packages that module may depend on:
 
-- **`api`**: the types callers use. Public.
-- **`spi`**: the ports that adapters implement. Public.
-- **`internal`**: implementation detail. Not reachable from outside the module.
+- **`expression-api`**: no Spring. Only the JDK, its own package and `kernel-values`.
+- **`expression-testkit`**: no Spring, no JEXL and no adapter package.
+- **`expression-jexl-adapter`**: no Spring. Only the JDK, Commons JEXL, `expression-api`,
+  `kernel-values` and itself.
+- **`expression-spring-boot-autoconfig`**: only the JDK, Spring, the expression packages and kernel
+  types. It is the Spring module, so it has no no-Spring rule.
 
-Api and spi never depend on internal. Core modules take no Spring, Jena or Lombok dependency.
-Those belong in adapter modules. Maven dependency declarations enforce the rest.
+The Spring, Jena and Lombok ban on core modules comes from the parent POM's enforcer, active where
+`sequeless.enforcer.core.skip=false` (api, testkit and the JEXL adapter). The autoconfig module
+inherits the parent default of `true`.
 
 ## Adapter strategy
 
