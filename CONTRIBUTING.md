@@ -44,8 +44,9 @@ Context, Decision and Consequences. ADRs are immutable: supersede with a new one
 ## Quality gates
 
 Spotless (format), Enforcer (dependency hygiene, including the parent's Spring, Jena and Lombok
-ban on core modules), and ArchUnit (boundaries) all run in `make verify`. CodeQL runs in CI. No
-workflow in this repo runs Sonar; `sonar-project.properties` is present.
+ban on core modules), and ArchUnit (boundaries) all run in `make verify`. CodeQL runs in CI through
+`.github/workflows/codeql.yml`. SonarCloud analyses pull requests through its GitHub integration;
+`sonar-project.properties` configures it.
 
 ## Coverage (JaCoCo)
 
