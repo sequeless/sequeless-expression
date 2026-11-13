@@ -4,6 +4,9 @@
     * org.sequeless:expression-api bumped to 0.1.1,
     * org.sequeless:expression-jexl-adapter bumped to 0.1.1
 
+* The following workspace dependencies were updated
+    * org.sequeless:expression-jexl-adapter bumped to 0.1.3
+
 ## [0.1.2](https://github.com/sequeless/sequeless-expression/compare/expression-spring-boot-autoconfig-v0.1.1...expression-spring-boot-autoconfig-v0.1.2) (2026-11-11)
 
 
