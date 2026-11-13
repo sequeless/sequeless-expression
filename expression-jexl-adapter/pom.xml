@@ -11,7 +11,7 @@
 
   <groupId>org.sequeless</groupId>
   <artifactId>expression-jexl-adapter</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
   <name>expression-jexl-adapter</name>
   <description>The default ExpressionPort adapter: Commons JEXL 3 in a sandboxed, side-effect-free configuration (no reflection, no static method/class access).</description>
 
