@@ -4,6 +4,10 @@
     * org.sequeless:expression-api bumped to 0.1.1,
     * org.sequeless:expression-testkit bumped to 0.1.1
 
+* The following workspace dependencies were updated
+    * org.sequeless:expression-api bumped to 0.1.2,
+    * org.sequeless:expression-testkit bumped to 0.1.2
+
 ## [0.1.1](https://github.com/sequeless/sequeless-expression/compare/expression-jexl-adapter-v0.1.1...expression-jexl-adapter-v0.1.1) (2026-11-06)
 
 

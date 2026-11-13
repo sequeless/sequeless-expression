@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/sequeless/sequeless-expression/compare/expression-api-v0.1.1...expression-api-v0.1.2) (2026-11-11)
+
+
+### Documentation
+
+* add consumer quick start, how-to guides and module READMEs ([#18](https://github.com/sequeless/sequeless-expression/issues/18)) ([48855bb](https://github.com/sequeless/sequeless-expression/commit/48855bb848762a59751f05a33efe780562a5a888))
+
 ## [0.1.1](https://github.com/sequeless/sequeless-expression/compare/expression-api-v0.1.0...expression-api-v0.1.1) (2026-11-06)
 
 
